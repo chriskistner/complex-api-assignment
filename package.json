@@ -4,7 +4,8 @@
   "description": "Q2 Project for making/deploying an API with a nested data structure",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "test": "nodemon app.js"
   },
   "repository": {
     "type": "git",
