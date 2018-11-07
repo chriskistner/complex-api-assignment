@@ -35,5 +35,11 @@
         "price": "25.50",
         "description": "For Kids Only",
         "tags": ["e8ad0edd"]
+    }, {
+        "id": "acfb98c5-5b99-4648-8a4f-362fdbff34a6",
+        "name": "Monster",
+        "price": "20.00",
+        "description": "Fear me for I am the Reaper!",
+        "tags": ["b1e32203"]
     }]
 }

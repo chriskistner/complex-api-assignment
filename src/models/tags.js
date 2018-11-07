@@ -65,19 +65,10 @@ function deleteTag(costumeID, tagID) {
 
 function newTag (name, color) {
     let newTag = { id: uuid().slice(0,8), name, color };
-    const errors = [];
     const tags = fs.readFileSync(path.join(__dirname,'../../data/tags.json'), 'utf-8');
     const allTags = JSON.parse(tags);
-    if(!newTag.name) {
-        errors.push('name is required');
-        newTag = { errors };
-    } else if (newTag.color[0]!= "#") {
-        errors.push('Color code must start with a # sign!');
-        newTag = { errors};
-    } else {
-        allTags.data.push(newTag);
-        fs.writeFileSync(path.join(__dirname,'../../data/tags.json'), JSON.stringify(allTags), 'utf-8');
-};
+    allTags.data.push(newTag);
+    fs.writeFileSync(path.join(__dirname,'../../data/tags.json'), JSON.stringify(allTags), 'utf-8');
     return newTag;
   };
 
@@ -88,7 +79,6 @@ function newTag (name, color) {
     const allCostumes = JSON.parse(costumes);
     let specificCostume = allCostumes.data.find(costume => costume.id === costumeID);
     const returnTag = newTag(name, color);
-    console.log(returnTag);
     allTags.data.push(returnTag);
     specificCostume.tags.push(returnTag.id);
     fs.writeFileSync(path.join(__dirname,'../../data/tags.json'), JSON.stringify(allTags), 'utf-8');
@@ -97,11 +87,9 @@ function newTag (name, color) {
   }
 
   function updateTag ( tagID, name, color) {
-    console.log(tagID);
     const tags = fs.readFileSync(path.join(__dirname,'../../data/tags.json'),'utf-8');
     const allTags = JSON.parse(tags);
     let specificTag = allTags.data.find(tag => tag.id === tagID);
-    console.log(specificTag);
     specificTag.name = name;
     specificTag.color = color;
     fs.writeFileSync(path.join(__dirname,'../../data/tags.json'), JSON.stringify(allTags), 'utf-8');

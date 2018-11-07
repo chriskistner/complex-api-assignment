@@ -31,7 +31,6 @@ function deleteOne(id) {
 
 function newCostume (name, price, description, tags) {
     let newCostume = { id: uuid(), name, price, description, tags };
-    const errors = [];
     const costumes = fs.readFileSync(path.join(__dirname,'../../data/costumes.json'), 'utf-8');
     // const tags = fs.readFileSync(path.join(__dirname,'../../data/tags.json'), 'utf-8');
     const allCostumes = JSON.parse(costumes);
@@ -40,16 +39,8 @@ function newCostume (name, price, description, tags) {
         return newTag.id;
     })
     newCostume.tags = tagIDs;
-    if(!newCostume.name) {
-        errors.push('name is required');
-        newCostume = { errors };
-    } else if (!newCostume.price) {
-        errors.push('Hey this must cost something??');
-        newCostume = { errors};
-    } else {
     allCostumes.data.push(newCostume);
     fs.writeFileSync(path.join(__dirname,'../../data/costumes.json'), JSON.stringify(allCostumes), 'utf-8');
-};
     return newCostume;
   };
 
