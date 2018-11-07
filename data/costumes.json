@@ -4,24 +4,36 @@
         "name": "Pirate",
         "price": "29.95",
         "description": "Carribean-era swashbuckler with hat and plastic cutlass",
-        "tags": "Jack Sparrow"
+        "tags": ["3a2f5144", "99607ba8", "996070a5"]
     }, {
         "id": "d9ac3415-274a-4053-8715-45ad71617fe1",
         "name": "Gargoyle",
         "price": "49.95",
         "description": "Caution, wings may get caught in doors",
-        "tags": "Goliath"
+        "tags": ["996070a5"]
     }, {
         "id": "8488dcde-4ccf-466c-9b48-2c20ad54f5be",
         "name": "Ghost",
         "price": "19.95",
         "description": "Generic bed sheet with holes cut into it",
-        "tags": "Casper"
+        "tags": ["3a2f5144"]
     }, {
         "id": "a901253a-b0be-43ce-922b-1d579f3e6f69",
         "name": "Spartan Armor",
         "price": "49.95",
         "description": "Cool  padded, body-suit with chest-plater, helment, and assault rife",
-        "tags": "Mjollnir"
+        "tags": ["d7533575"]
+    }, {
+        "id": "cda26cab-2d04-403b-85f0-2bd9dfff5891",
+        "name": "Chicken",
+        "price": "12.50",
+        "description": "Feathers may cause allergies",
+        "tags": ["d20eda30", "43a5c3b0"]
+    }, {
+        "id": "e4ef053a-1900-464c-9856-988cf12dbbcc",
+        "name": "Grunt",
+        "price": "25.50",
+        "description": "For Kids Only",
+        "tags": ["e8ad0edd"]
     }]
 }

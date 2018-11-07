@@ -1,6 +1,7 @@
 const fs = require('fs');
 const uuid = require('uuid/v4');
 const path = require('path');
+const Tags= require('../models/tags');
 
 function getAll () {
     const costumes = fs.readFileSync(path.join(__dirname,'../../data/costumes.json'),'utf-8');
@@ -16,14 +17,13 @@ function getOne (id) {
         result = null;
     }
     return result;
-}
+};
 
 function deleteOne(id) {
     const costumes = fs.readFileSync(path.join(__dirname,'../../data/costumes.json'), 'utf-8');
     const allCostumes = JSON.parse(costumes);
     const result = allCostumes.data.find(outfit => outfit.id === id);
     const index = allCostumes.data.findIndex(outfit => outfit.id === id);
-    console.log(result);
     allCostumes.data.splice(index,1);
     fs.writeFileSync(path.join(__dirname,'../../data/costumes.json'), JSON.stringify(allCostumes), 'utf-8');
     return result;
@@ -33,7 +33,13 @@ function newCostume (name, price, description, tags) {
     let newCostume = { id: uuid(), name, price, description, tags };
     const errors = [];
     const costumes = fs.readFileSync(path.join(__dirname,'../../data/costumes.json'), 'utf-8');
+    // const tags = fs.readFileSync(path.join(__dirname,'../../data/tags.json'), 'utf-8');
     const allCostumes = JSON.parse(costumes);
+    const tagIDs= tags.map( tag => {
+        let newTag = Tags.newTag(tag.name, tag.color);
+        return newTag.id;
+    })
+    newCostume.tags = tagIDs;
     if(!newCostume.name) {
         errors.push('name is required');
         newCostume = { errors };

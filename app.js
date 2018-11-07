@@ -8,8 +8,10 @@ app.disable('x-powered-by');
 app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-const costumeRoutes = require('./src/routes/costumes')
-app.use('/costumes', costumeRoutes)
+const costumeRoutes = require('./src/routes/costumes');
+const tagRoutes = require('./src/routes/tags');
+app.use('/costumes', costumeRoutes);
+app.use('/costumes/:id/tags', tagRoutes );
 
 app.use((err, req, res, next) => {
     console.error(err)

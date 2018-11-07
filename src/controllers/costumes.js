@@ -23,6 +23,7 @@ function getAll (req, res, next) {
 
   function newCostume(req, res, next) {
     const {name, price, description, tags} = req.body;
+    console.log(tags);
     let result = model.newCostume(name, price, description, tags);
     if (!result)
     return next({ status: 400, message: "Hey you forgot your costume!" });
