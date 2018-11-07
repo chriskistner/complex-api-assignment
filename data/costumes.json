@@ -1,0 +1,27 @@
+{
+    "data": [{
+        "id": "b3c31018-4f9b-4bda-82f0-d9616f7e29c4",
+        "name": "Pirate",
+        "price": "29.95",
+        "description": "Carribean-era swashbuckler with hat and plastic cutlass",
+        "tags": "Jack Sparrow"
+    }, {
+        "id": "d9ac3415-274a-4053-8715-45ad71617fe1",
+        "name": "Gargoyle",
+        "price": "49.95",
+        "description": "Caution, wings may get caught in doors",
+        "tags": "Goliath"
+    }, {
+        "id": "8488dcde-4ccf-466c-9b48-2c20ad54f5be",
+        "name": "Ghost",
+        "price": "19.95",
+        "description": "Generic bed sheet with holes cut into it",
+        "tags": "Casper"
+    }, {
+        "id": "a901253a-b0be-43ce-922b-1d579f3e6f69",
+        "name": "Spartan Armor",
+        "price": "49.95",
+        "description": "Cool  padded, body-suit with chest-plater, helment, and assault rife",
+        "tags": "Mjollnir"
+    }]
+}
